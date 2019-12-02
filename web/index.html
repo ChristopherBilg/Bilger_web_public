@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" />
+        <link rel="shortcut icon" type="image/png" href="icons/favicon.ico"/>
+        <title>To-Do List Creator</title>
+    </head>
+    <body>
+
+        <div id="titleNav">
+
+            <div id="pageTitle">
+                To-Do
+            </div>
+
+            <div id="nav">
+                <div class="dropdown">
+                    <a href="#/home"><img title="Home" src="icons/dark/home_icon_H24.png" alt="Home"></a>
+                </div>
+                <div class="dropdown">
+                    <img class="dropHeader" onclick="dropdown('accountDropDown')" title="Account" src="icons/dark/account_dd_icon_H24.png" alt="Account" >
+                    <div class="dropContent" id="accountDropDown">
+                        <a href="#/user_registration">Register</a> <br/>
+                        <a href="#/user_login">Log&nbsp;In</a> <br/>
+                        <a href="#/user_profile">View&nbsp;User&nbsp;Profile</a> <br/>
+                        <a href="#/user_update">Update&nbsp;User</a> <br/>
+                        <a href="#/user_logout">Log&nbsp;Out</a>
+                    </div> 
+                </div>
+                <div class="dropdown">
+                    <img class="dropHeader" onclick="dropdown('searchDropDown')"   title="Search" src="icons/dark/search_dd_icon_H24.png" alt="Search" >
+                    <div class="dropContent" id="searchDropDown">
+                        <a href="#/search_users">Search&nbsp;Users</a> <br/>
+                        <a href="#/search_other">Search&nbsp;Other</a> <br/>
+                        <a href="#/other_registration">Other&nbsp;Registration</a> <br/>
+                        <a href="#/other_update">Update&nbsp;Other</a> <br/>
+                        <a href="#/slideshow">View&nbsp;Slideshow</a> <br/>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <img class="dropHeader" onclick="dropdown('tutorialDropDown')" title="Tutorial" src="icons/dark/tutorial_dd_icon_H24.png" alt="Account" >
+                    <div class="dropContent" id="tutorialDropDown">
+                        <a>Proposal</a> <br/>
+                        <a>Marketing</a> <br/>
+                        <a>Demo</a> <br/>
+                        <a>Log</a> <br/>
+                    </div> 
+                </div>          
+                <div class="dropdown">
+                    <a href="#/blog"><img  title="Blog" src="icons/dark/blog_icon_H24.png" alt="Blog"></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="content">
+            <span id="view"></span>
+        </div>
+
+        <div id="footer">
+            Christopher R. Bilger
+        </div>
+
+        <script src="javascript/ajax.js"></script>
+        <script src="javascript/ajax2.js"></script>
+        <script src="javascript/MakeTableBuilder.js"></script>
+        <script src="javascript/userCRUD.js"></script>
+        <script src="javascript/otherCRUD.js"></script>
+        
+        <script type="text/javascript" src="javascript/dropdownFw.js"></script>
+        <script type="text/javascript">
+                        "use strict";
+                        
+                        dropdownFw();
+        </script>
+        
+        <script type="text/javascript" src="javascript/MakeSlideShowUsers.js"></script>
+        <script type="text/javascript" src="javascript/MakeSlideShowOther.js"></script>
+        
+        <script type="text/javascript" src="javascript/components/home.js"></script>
+        <script type="text/javascript" src="javascript/components/blog.js"></script>
+        <script type="text/javascript" src="javascript/components/search_users.js"></script>
+        <script type="text/javascript" src="javascript/components/search_other.js"></script>
+        <script type="text/javascript" src="javascript/components/slideshow.js"></script>
+        <script type="text/javascript" src="javascript/components/missing.js"></script>
+        <script type="text/javascript" src="javascript/components/user_registration.js"></script>
+        <script type="text/javascript" src="javascript/components/user_login.js"></script>
+        <script type="text/javascript" src="javascript/components/user_profile.js"></script>
+        <script type="text/javascript" src="javascript/components/user_logout.js"></script>
+        
+        <script type="text/javascript" src="javascript/components/other_registration.js"></script>
+        
+        <script type="text/javascript" src="javascript/components/user_update.js"></script>
+        <script type="text/javascript" src="javascript/components/other_update.js"></script>
+        
+        <script type="text/javascript" src="javascript/routeFw.js"></script>
+        <script type="text/javascript">
+                        "use strict";
+                        
+                        var routing = [];
+                        routing["/home"] = home;
+                        routing["/blog"] = blog;
+                        routing["/search_users"] = search_users;
+                        routing["/search_other"] = search_other;
+                        routing["/slideshow"] = slideshow;
+                        routing["/user_registration"] = user_registration.UI;
+                        routing["/user_login"] = user_login.UI;
+                        routing["/user_profile"] = user_profile.UI;
+                        routing["/user_logout"] = user_logout.UI;
+                        
+                        routing["/other_registration"] = other_registration.UI;
+                        
+                        routing["/user_update"] = user_update.UI;
+                        routing["/other_update"] = other_update.UI;
+
+                        var myRouter = routeFw({
+                            routeArray: routing,
+                            contentId: "view",
+                            startingPath: "/home",
+                            missingPathFunction: missing
+                        });
+                        
+                        var tableBuilder = MakeTableBuilder("icons/sortUpDown16.png");
+        </script>
+    </body>
+</html>

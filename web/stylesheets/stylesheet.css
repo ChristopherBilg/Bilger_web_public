@@ -1,0 +1,208 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #989898;
+    color: black;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 16px;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+}
+
+#center_picture {
+    width: 50%;
+    border-radius: 10px;
+    max-width: 30%;
+}
+/* Fixed Position Title and Navigation Bar */
+#titleNav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    width: 100%;
+    background-color: white;
+    padding-bottom: 10px;
+    color: black;
+    font-family: serif;
+    font-weight: bold;
+
+}
+
+#pageTitle {
+    padding: 12px;
+    padding-bottom: 0px;
+    font-size: 48px;
+    letter-spacing: 1.5px;
+}
+
+#nav {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    text-align: right;
+    font-size: 24px;
+    padding-bottom: 12px;
+    padding-top: 32px;
+}
+
+
+#nav a {
+    text-decoration: none;
+    color: #C8C8C8;
+    margin-left: 2ex;
+    margin-right: 2ex;
+}
+
+/* DropDown Menus */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 1ex;
+    cursor: pointer;
+}
+
+/* This is the drop down header that is visible on first rendering of the page. This is what 
+ * you click to open up the drop contents. 
+ * Don't delete this even though there are no style rules - js needs it, references it. */
+.dropHeader {}
+
+/* This is the initially hidden part of the menu that opens up when you click on the drop header */
+.dropContent {
+    background-color: black;
+    right: 0px;
+    position: absolute;
+    font-size: 14px;
+    z-index: 3;
+    padding: 8px;
+    line-height: 1.7em;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    right: -500px;
+    visibility: hidden;
+    transition: right 0.5s ease 0s;
+}
+
+/* Main page content area */
+#content {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+/* Fixed Position footer */
+#footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: white;
+    color: black;
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+}
+
+/* Horizontal Row Items */
+.row {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2ex;
+    margin-bottom: 2ex;
+    background-color: #929292;
+    color: #000000;
+}
+
+.column {
+    box-sizing: border-box;
+    padding: 1ex;
+}
+
+.column img { /* applies to images in the column class */
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.callOut {
+    margin:5ex;
+    padding: 0.25ex 1ex;  /* first number is top/botom, then left/right */
+    background-color: #EEEEEE;
+    border-radius: 8px;
+}
+
+@media screen and (min-width: 600px) {
+
+    .column {
+        float: left;
+    }
+
+    .column25 {
+        width: 25%;
+    }
+    .column33 {
+        width: 33%;
+    }
+    .column50 {
+        width: 50%;
+    }
+    .column66 {
+        width: 66%;
+    }
+    .column75 {
+        width: 75%;
+    }
+
+    .stopFloat { /* prevents elements below stopFloat from floating up above the stopFloat */
+        clear: both;
+    }
+
+}
+
+/* Slideshow */
+#users, #other {
+    width: 50%;
+    margin: 0 auto;
+    align-content: center;
+    text-align: center;
+    padding: 10px
+}
+
+#users_email, #other_id {
+    padding-bottom: 5px;
+}
+
+#users img, #other img {
+    max-width: 50%;
+}
+
+.data table {
+    margin: auto;
+    width: 50%;
+}
+
+/* User Login, Profile, & Log Out */
+.logon, #profile, .logout {
+    text-align: center;
+    align-content: center;
+}
+
+/* User Registration and Other Registration */
+#insertArea table {
+    text-align: center;
+    align-content: center;
+    margin: auto;
+    width: 50%;
+}
